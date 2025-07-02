@@ -1,7 +1,14 @@
 def add():
     print("Let's product add product....")
     while True:
-        product =  input("Which product you want add in our store [Fruite] [vegetable] [Meat]: ")
+        product =  input("Which product you want add in our store [Fruite] [vegetable] [Meat]: ").lower()
+        if product in ['fruite', 'vegetable', 'vegetable']: 
+            if product == 'fruite':
+                break
+            elif product == 'vegetable':
+                break
+            elif product == 'meat':
+                break
 
 
 def main():
