@@ -1,4 +1,5 @@
 #All imports
+from sympy import sympify
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QVBoxLayout, QPushButton, QGridLayout, QHBoxLayout, QLabel, QLineEdit, QWidget
 
@@ -16,7 +17,9 @@ def button_clicked():
     if text == "=":
         symbol = text_box.text()
         try: 
-            res = eval(symbol)
+            exp = sympify(symbol)
+            value = exp.evalf()
+            res = f"{value:.2f}".rstrip('0').rstrip('.')
             text_box.setText(str(res))
         except Exception as e:
             text_box.setText("Error")
@@ -28,6 +31,12 @@ def button_clicked():
             text_box.clear()
         else:
             text_box.setText(curr_input[:-1])
+    elif text.isdigit:
+        curr_input = text_box.text()
+        if curr_input == '0':
+            text_box.setText(text)
+        else:
+            text_box.setText(curr_input + text)
     else:
         curr_input = text_box.text()
         text_box.setText(curr_input + text)
