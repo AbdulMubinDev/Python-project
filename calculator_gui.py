@@ -1,7 +1,7 @@
 #All imports
 from sympy import sympify
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QVBoxLayout, QPushButton, QGridLayout, QHBoxLayout, QLabel, QLineEdit, QWidget
+from PyQt5.QtWidgets import QApplication, QVBoxLayout, QPushButton, QGridLayout, QHBoxLayout, QLineEdit, QWidget
 
 
 class CalculatorApp(QWidget):
